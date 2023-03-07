@@ -21,7 +21,7 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement, Comment
 from xml.dom import minidom
 
-from modulos.procexmodule2 import TCPLAN_extract
+from V2Gen.procexmodule2 import TCPLAN_extract
 from on_db import *
 
 import mysql.connector

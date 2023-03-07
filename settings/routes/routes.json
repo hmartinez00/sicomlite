@@ -1,0 +1,12 @@
+{
+    "exec": [
+        [
+            "opcion 1",
+            "Hacer commit automatico"
+        ],
+        [
+            "scripts/test.py",
+            "modulos/Package_update/git_update.py"
+        ]
+    ]
+}

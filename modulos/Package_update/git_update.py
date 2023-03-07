@@ -7,6 +7,4 @@ os.chdir('..')
 opciones = os.listdir()
 project = option_list(opciones)
 
-# print(project)
-
 auto_commit(project)

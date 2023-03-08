@@ -161,10 +161,10 @@ print(df)
 # Ingresando a la Base de datos
 # ---------------------------------------------------------------------
 
-base_datos = 'vrss_operation_and_managment_subsystem'
-tabla = '`control_misiones_tcplan_info`'
+# base_datos = 'vrss_operation_and_managment_subsystem'
+# tabla = '`control_misiones_tcplan_info`'
 
-pregunta = input('Desea ingresar la informacion a la Base de datos? (s/n): ')
+# pregunta = input('Desea ingresar la informacion a la Base de datos? (s/n): ')
 
 # if pregunta == 's' or pregunta == 'S':
 #     Insertar_registro_masivo(df, base_datos, tabla)

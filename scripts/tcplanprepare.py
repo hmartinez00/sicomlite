@@ -13,18 +13,9 @@
 # ---------------------------------------------------------------------
 import os
 import shutil
-import pandas as pd
-from datetime import datetime, timedelta
-import xml.etree.ElementTree as ET
-
-from xml.etree import ElementTree
-from xml.etree.ElementTree import Element, SubElement, Comment
-from xml.dom import minidom
-
+from datetime import datetime
 from V2Gen.procexmodule2 import TCPLAN_extract
-# from on_db import *
 
-import mysql.connector
 
 # ---------------------------------------------------------------------
 
@@ -51,8 +42,8 @@ dia_final = datetime.strftime(
 print(satellite, dia_inicial, dia_final)
 
 archivo_nuevo = directorio + '\\' + \
-    os.path.basename(archivo_viejo.split('.')[0]) + ' ' + \
-    satellite + ' ' + dia_inicial + '-' + dia_final + '.xml'
+    os.path.basename(archivo_viejo.split('.')[0]) + '_' + \
+    satellite + '_' + dia_inicial + '-' + dia_final + '.xml'
 
 print(archivo_nuevo)
 

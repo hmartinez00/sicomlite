@@ -13,25 +13,15 @@
 # ---------------------------------------------------------------------
 import os
 import pandas as pd
-from datetime import datetime, timedelta
-import xml.etree.ElementTree as ET
-
-from xml.etree import ElementTree
-from xml.etree.ElementTree import Element, SubElement, Comment
-from xml.dom import minidom
-
 from V2Gen.procexmodule2 import TCPLAN_extract
-# from on_db import *
 
-import mysql.connector
 
 # ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
 # Recabando info de XMLs.
 # ---------------------------------------------------------------------
-os.chdir('..')
-directorio = 'backup\\TCPLAN\\'
+directorio = 'src'
 rutas = []
 
 for nombre_directorio, dirs, ficheros in os.walk(directorio):
@@ -137,17 +127,6 @@ print(
 # ---------------------------------------------------------------------
 # Segmentando la informacion a ingresar
 # ---------------------------------------------------------------------
-__BatchID__A = input('Introduzca BatchID inicial: ')
-__BatchID__B = input('Introduzca BatchID final: ')
-delay = timedelta(hours=4, minutes=40)
-delay_day = timedelta(days=1, hours=4, minutes=40)
-__diaA__ = datetime.strptime(__BatchID__A, '%Y%m%d') + delay
-__diaB__ = datetime.strptime(__BatchID__B, '%Y%m%d') + delay_day
-
-df = df[
-    (df['CaptureStartTime'] >= __diaA__) & \
-    (df['CaptureStartTime'] <= __diaB__)
-]
 
 df[df.index.name] = [i for i in range(len(df))]
 df.set_index(df.index.name,inplace=True)
@@ -156,19 +135,3 @@ df.index.name = None
 print(df)
 
 # ---------------------------------------------------------------------
-
-# ---------------------------------------------------------------------
-# Ingresando a la Base de datos
-# ---------------------------------------------------------------------
-
-# base_datos = 'vrss_operation_and_managment_subsystem'
-# tabla = '`control_misiones_tcplan_info`'
-
-# pregunta = input('Desea ingresar la informacion a la Base de datos? (s/n): ')
-
-# if pregunta == 's' or pregunta == 'S':
-#     Insertar_registro_masivo(df, base_datos, tabla)
-# elif pregunta == 'n' or pregunta == 'N':
-#     print('No se ingreso informacion!' + '\n')
-# else:
-#     print('Opción inválida!' + '\n')

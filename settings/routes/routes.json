@@ -2,12 +2,14 @@
     "exec": [
         [
             "Efectuar cambio de extension de TCPLAN",
-            "Actualizacion de Tabla de TrackingPlan",
+            "Actualizacion de tabla de TrackingPlan",
+            "Extraccion de data para Tabla de Misiones",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
             "scripts/trackingplan.py",
+            "scripts/extractorcplan.py",
             "modulos/Package_update/git_update.py"
         ]
     ]

@@ -4,12 +4,16 @@
             "Efectuar cambio de extension de TCPLAN",
             "Actualizacion de tabla de TrackingPlan",
             "Extraccion de data para Tabla de Misiones",
+            "Actualizacion de Tabla de Misiones",
+            "Generacion de Archivos de Plan de Misiones",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
             "scripts/trackingplan.py",
             "scripts/extractorcplan.py",
+            "scripts/cplanimport.py",
+            "scripts/cplanxgen2.py",
             "modulos/Package_update/git_update.py"
         ]
     ]

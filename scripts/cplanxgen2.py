@@ -16,9 +16,9 @@ import math
 import pandas as pd
 from datetime import datetime, timedelta
 
-from cplanmodule2 import *
+from V2Gen.cplanmodule2 import *
 from on_db import *
-from extractID import *
+from V2Gen.extractID import *
 # ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------

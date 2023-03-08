@@ -1,11 +1,13 @@
 {
     "exec": [
         [
-            "Efectuar cambio de extensión de TCPLAN.",
+            "Efectuar cambio de extensión de TCPLAN",
+            "Actualización de Tabla de TrackingPlan",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
+            "scripts/trackingplan.py",
             "modulos/Package_update/git_update.py"
         ]
     ]

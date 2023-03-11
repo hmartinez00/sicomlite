@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OK>
+  <FileHeader>
+    <MessageID>000000716064</MessageID>
+    <MessageType>OK</MessageType>
+    <Originator>OMS</Originator>
+    <Recipient>SCC</Recipient>
+    <MessageCreateTime>2023-03-08T12:00:07</MessageCreateTime>
+  </FileHeader>
+  <FileBody>
+    <TaskID>20230309000010</TaskID>
+    <StartNotifyID>20230309000003</StartNotifyID>
+    <PlanFileName>OMS_SCC_VRSS-2_20230308_000000716060.CPLAN2</PlanFileName>
+    <FocusFileName> </FocusFileName>
+    <ParameterFileCount>2</ParameterFileCount>
+    <FileList>
+      <ParameterFileName>OMS_SCC_VRSS-2_20230309000001_0001.SETPARA2</ParameterFileName>
+    </FileList>
+    <FileList>
+      <ParameterFileName>OMS_SCC_VRSS-2_20230309000002_0001.SETPARA2</ParameterFileName>
+    </FileList>
+  </FileBody>
+</OK>

@@ -6,6 +6,8 @@
             "Extraccion de data para Tabla de Misiones",
             "Actualizacion de Tabla de Misiones",
             "Generacion de Archivos de Plan de Misiones",
+            "Generar CPLAN",
+            "Generar Plan Files",
             "Hacer commit automatico"
         ],
         [
@@ -14,6 +16,8 @@
             "scripts/extractorcplan.py",
             "scripts/cplanimport.py",
             "scripts/cplanxgen2.py",
+            "scripts/cplanxgen2_test.py",
+            "scripts/procexgen2_test.py",
             "modulos/Package_update/git_update.py"
         ]
     ]

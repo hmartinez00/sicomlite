@@ -1,34 +1,14 @@
-# ---------------------------------------------------------------------
-# ABAE-SAT-UT-SGO
-# Desarrollado por: Héctor Martínez (Jefe(E) Telecomunicaciones)
-# Creación: 2022-08-13
-# Actualización: 2022-08-19
-#
-#   Script para generación del CPLAN2.
-#
-# ---------------------------------------------------------------------
-
-# ---------------------------------------------------------------------
-# Importamos las librerías.
-# ---------------------------------------------------------------------
-import os
 import math
-import pandas as pd
-from datetime import datetime, timedelta
-
-from V2Gen.cplanmodule2 import *
-from on_db import *
+from datetime import datetime
 from ManageDB.sqlite_on_db import selectall
 from modulos.cplanimport_module import cplanimport
-from V2Gen.extractID import *
-# ---------------------------------------------------------------------
+from V2Gen.cplanmodule2 import BatchID_missions_table, values_zero, XML_CPLAN2_generator
+
 
 # ---------------------------------------------------------------------
 # Definiendo la Base de datos
 # ---------------------------------------------------------------------
 base_datos = 'vrss_operation_and_managment_subsystem'
-
-# ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
 # Consulta a la tabla de Control de Procesos.
@@ -37,11 +17,23 @@ base_datos = 'vrss_operation_and_managment_subsystem'
 # control de procesos de la base de datos.
 # ---------------------------------------------------------------------
 tabla = '`control_misiones_id_control_process`'
+
 Last_MessageID = selectall(base_datos, tabla).iloc[-1]['MessageID']
+print(Last_MessageID)
 Next_MessageID = str(math.ceil(int(Last_MessageID)*0.1)*10).rjust(12, '0')
 print('El ID del nuevo proceso sera: ' + Next_MessageID)
 
 # ---------------------------------------------------------------------
+# Construcción de dataframes
+#
+# Se construyen los dataframes con los renglones de las misiones 
+# que se van a agendar para la fecha intruducida.
+# ---------------------------------------------------------------------
+print('{}% Creando la tabla de misiones del dia.'.format(int(1/8*100)))
+
+misiones_0 = cplanimport()
+
+print(misiones_0)
 
 # ---------------------------------------------------------------------
 # Definiendo los valores de fecha del plan y secuencia de workmodes.
@@ -60,19 +52,10 @@ Date_Code_BatchID = int(dia_de_plan)
 Initial_codes['MessageID'] = Next_MessageID
 Initial_codes['WorkMode'] = ['6', '1', '9']
 
-# ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
-# Construcción de dataframes
-#
-# Se construyen los dataframes con los renglones de las misiones 
-# que se van a agendar para la fecha intruducida.
+# Seleccionar las misiones del BatchID
 # ---------------------------------------------------------------------
-print('{}% Creando la tabla de misiones del dia.'.format(int(1/8*100)))
-
-tabla = '`control_misiones_solution_info`'
-misiones_0 = mysql_extract_table_df(base_datos, tabla)
-
 misiones_0.columns = [
     'Date', 'Start Time (UTCG)', 'Stop Time (UTCG)', 'Duration (sec)',
     'From Pass', 'To Pass', 'From Start Lat (deg)', 'From Start Lon (deg)',
@@ -90,8 +73,6 @@ Access = BatchID_missions_table(misiones_0, Date_Code_BatchID)
 print(Access)
 
 valores = values_zero(Access, Initial_codes)
-
-# ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
 # Construyendo los diccionarios de registro.
@@ -149,13 +130,4 @@ CPLAN_dict['PlanFileName'] = \
 
 print('{}% Generando el Plan.'.format(int(3/8*100)))
 
-os.chdir('..')
-os.chdir('backup/PMS/')
 XML_CPLAN2_generator(CPLAN_dict)
-
-os.chdir('../..')
-os.chdir('scripts/')
-exec(open('procexgen2.py').read())
-
-print('{}% Actualizando registro de control de procesos.'.format(int(8/8*100)))
-IDUpdate(Date_Code_BatchID)

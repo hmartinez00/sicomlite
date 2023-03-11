@@ -132,6 +132,11 @@ def trackingplan():
     df.set_index(df.index.name,inplace=True)
     df.index.name = None
 
+    df['CaptureEndTime'] = pd.to_datetime(df['CaptureEndTime'])
+    df['StartLocalTime'] = pd.to_datetime(df['StartLocalTime'])
+    df['EndLocalTime'] = pd.to_datetime(df['EndLocalTime'])
+    df['MadeTime'] = pd.to_datetime(df['MadeTime'])
+
     return df
 
     # ---------------------------------------------------------------------

@@ -3,17 +3,15 @@
         [
             "Efectuar cambio de extension de TCPLAN",
             "Opciones de verificacion",
-            "Generar CPLAN",
-            "Generar Plan Files",
-            "Generar Tabla IDUpdate",
+            "Generacion de BatchID Plan",
+            "Generacion paso a paso",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
             "scripts/checkoptions.py",
-            "scripts/cplanxgen2_exec.py",
-            "scripts/procexgen2_exec.py",
-            "scripts/IDUpdate_exec.py",
+            "scripts/generar_batchid.py",
+            "scripts/gensteps.py",
             "modulos/Package_update/git_update.py"
         ]
     ],
@@ -29,6 +27,19 @@
                 "scripts/checkoptions/trackingplan.py",
                 "scripts/checkoptions/extractorcplan.py",
                 "scripts/checkoptions/cplanimport.py"
+            ]
+        },
+        "gensteps":
+        {
+            "opciones": [
+                "Generar CPLAN",
+                "Generar Plan files",
+                "Generar tabla de procesos"
+            ],
+            "acciones": [
+                "scripts/gensteps/cplanxgen2_exec.py",
+                "scripts/gensteps/procexgen2_exec.py",
+                "scripts/gensteps/idupdate_exec.py"
             ]
         }
     }

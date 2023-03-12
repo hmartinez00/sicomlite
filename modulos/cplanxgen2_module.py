@@ -5,7 +5,7 @@ from modulos.cplanimport_module import cplanimport
 from V2Gen.cplanmodule2 import BatchID_missions_table, values_zero, XML_CPLAN2_generator
 
 
-def cplanxgen():
+def cplanxgen2(misiones_0, Date_Code_BatchID):
     # ---------------------------------------------------------------------
     # Definiendo la Base de datos
     # ---------------------------------------------------------------------
@@ -25,18 +25,6 @@ def cplanxgen():
     print('El ID del nuevo proceso sera: ' + Next_MessageID)
 
     # ---------------------------------------------------------------------
-    # Construcción de dataframes
-    #
-    # Se construyen los dataframes con los renglones de las misiones 
-    # que se van a agendar para la fecha intruducida.
-    # ---------------------------------------------------------------------
-    print('{}% Creando la tabla de misiones del dia.'.format(int(1/8*100)))
-
-    misiones_0 = cplanimport()
-
-    print(misiones_0)
-
-    # ---------------------------------------------------------------------
     # Definiendo los valores de fecha del plan y secuencia de workmodes.
     # ---------------------------------------------------------------------
     print('Solicitando datos iniciales.')
@@ -45,10 +33,6 @@ def cplanxgen():
     ImagingList = {}
     PlanList = {}
     CPLAN_dict = {}
-
-    dia_de_plan = input('{}% Introducir BatchID: '.format(int(0/8*100)))
-
-    Date_Code_BatchID = int(dia_de_plan)
 
     Initial_codes['MessageID'] = Next_MessageID
     Initial_codes['WorkMode'] = ['6', '1', '9']
@@ -82,7 +66,7 @@ def cplanxgen():
     # nuevos XML.
     # ---------------------------------------------------------------------
     print('{}% Creando el diccionario de registros'.format(int(2/8*100)) + \
-        ' para el plan ' + dia_de_plan)
+        ' para el plan ' + str(Date_Code_BatchID))
 
     ImagingList['ImagingID'] = valores['ImagingID']
     ImagingList['RollAngle'] = valores['RollAngle']

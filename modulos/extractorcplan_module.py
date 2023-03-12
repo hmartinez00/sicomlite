@@ -1,4 +1,4 @@
-
+import os
 import pandas as pd
 from datetime import datetime
 
@@ -12,7 +12,19 @@ def extractorcplan():
       a *.csv.
     '''
 
-    archivo_0 = input('Introduzca ruta del archivo: ')
+    directorio = 'src'
+    rutas = []
+
+    for nombre_directorio, dirs, ficheros in os.walk(directorio):
+        for nombre_fichero in ficheros:
+            if '.xlsx' in nombre_fichero:
+                ruta = nombre_directorio + '\\' + nombre_fichero
+                rutas.append(ruta.replace('\\', '/'))
+
+
+    # archivo_0 = input('Introduzca ruta del archivo: ')
+    archivo_0 = rutas[-1]
+    print(archivo_0)
 
     tiempo = datetime.strftime(
         datetime.now()

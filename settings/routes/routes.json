@@ -11,9 +11,9 @@
         [
             "scripts/tcplanprepare.py",
             "scripts/checkoptions.py",
-            "scripts/cplanxgen2_test.py",
-            "scripts/procexgen2_test.py",
-            "scripts/IDUpdate_test.py",
+            "scripts/cplanxgen2_exec.py",
+            "scripts/procexgen2_exec.py",
+            "scripts/IDUpdate_exec.py",
             "modulos/Package_update/git_update.py"
         ]
     ],

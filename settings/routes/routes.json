@@ -2,23 +2,34 @@
     "exec": [
         [
             "Efectuar cambio de extension de TCPLAN",
-            "Actualizacion de tabla de TrackingPlan",
-            "Extraccion de data para Tabla de Misiones",
-            "Actualizacion de Tabla de Misiones",
-            "Generacion de Archivos de Plan de Misiones",
+            "Opciones de verificacion",
             "Generar CPLAN",
             "Generar Plan Files",
+            "Generar Tabla IDUpdate",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
-            "scripts/trackingplan.py",
-            "scripts/extractorcplan.py",
-            "scripts/cplanimport.py",
-            "scripts/cplanxgen2.py",
+            "scripts/checkoptions.py",
             "scripts/cplanxgen2_test.py",
             "scripts/procexgen2_test.py",
+            "scripts/IDUpdate_test.py",
             "modulos/Package_update/git_update.py"
         ]
-    ]
+    ],
+    "sub_exec": {
+        "checkoptions":
+        {
+            "opciones": [
+                "TrackingPlan",
+                "Accesos",
+                "Misiones"
+            ],
+            "acciones": [
+                "scripts/checkoptions/trackingplan.py",
+                "scripts/checkoptions/extractorcplan.py",
+                "scripts/checkoptions/cplanimport.py"
+            ]
+        }
+    }
 }

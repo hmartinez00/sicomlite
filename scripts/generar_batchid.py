@@ -12,14 +12,4 @@ Date_Code_BatchID = int(dia_de_plan)
 
 cplanxgen2(misiones_0, Date_Code_BatchID)
 procexgen2()
-
-pregunta = input('Desea actualizar la tabla de procesos? (S/N): ')
-
-if pregunta == 's' or pregunta == 'S':
-    try:
-        ID_Update(Date_Code_BatchID)
-    except:
-        print('Directorio No encontrado!')
-
-else:
-    pass
+ID_Update(Date_Code_BatchID)

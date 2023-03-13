@@ -21,12 +21,14 @@
             "opciones": [
                 "TrackingPlan",
                 "Accesos",
-                "Misiones"
+                "Misiones",
+                "Verificar tabla de procesos"
             ],
             "acciones": [
                 "scripts/checkoptions/trackingplan.py",
                 "scripts/checkoptions/extractorcplan.py",
-                "scripts/checkoptions/cplanimport.py"
+                "scripts/checkoptions/cplanimport.py",
+                "scripts/checkoptions/checkidupdate.py"
             ]
         },
         "gensteps":

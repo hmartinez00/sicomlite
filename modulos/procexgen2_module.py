@@ -5,7 +5,6 @@ import os
 from datetime import datetime
 from V2Gen.procexmodule2 import *
 from modulos.trackingplan_module import trackingplan
-from ManageDB.mysql_on_db import mysql_extract_table_df
 
 
 def procexgen2():

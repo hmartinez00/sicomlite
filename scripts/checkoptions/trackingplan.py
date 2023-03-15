@@ -1,4 +1,7 @@
+import pandas as pd
 from modulos.trackingplan_module import trackingplan
 
 
-print(trackingplan())
+df = trackingplan()
+
+print(df)

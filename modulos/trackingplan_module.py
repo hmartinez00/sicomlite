@@ -132,10 +132,15 @@ def trackingplan():
     df.set_index(df.index.name,inplace=True)
     df.index.name = None
 
-    df['CaptureEndTime'] = pd.to_datetime(df['CaptureEndTime'])
-    df['StartLocalTime'] = pd.to_datetime(df['StartLocalTime'])
-    df['EndLocalTime'] = pd.to_datetime(df['EndLocalTime'])
-    df['MadeTime'] = pd.to_datetime(df['MadeTime'])
+    # df['CaptureEndTime'] = pd.to_datetime(df['CaptureEndTime'])
+    # df['StartLocalTime'] = pd.to_datetime(df['StartLocalTime'])
+    # df['EndLocalTime'] = pd.to_datetime(df['EndLocalTime'])
+    # df['MadeTime'] = pd.to_datetime(df['MadeTime'])
+
+    df0 = df.iloc[:,:4]
+    df1 = df.iloc[:,4:].apply(pd.to_datetime, errors='coerce')
+
+    df = pd.concat([df0, df1], axis=1)
 
     return df
 

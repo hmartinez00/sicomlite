@@ -1,7 +1,6 @@
 import math
 from datetime import datetime
 from ManageDB.sqlite_on_db import selectall
-from modulos.cplanimport_module import cplanimport
 from V2Gen.cplanmodule2 import BatchID_missions_table, values_zero, XML_CPLAN2_generator
 
 

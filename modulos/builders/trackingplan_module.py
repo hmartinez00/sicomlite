@@ -4,6 +4,7 @@
 import os
 import pandas as pd
 from V2Gen.procexmodule2 import TCPLAN_extract
+from General_Utilities.control_rutas import setting_routes
 
 
 # ---------------------------------------------------------------------
@@ -21,7 +22,9 @@ def trackingplan():
     # ---------------------------------------------------------------------
     # Recabando info de XMLs.
     # ---------------------------------------------------------------------
-    directorio = 'src'
+    # directorio = 'src'
+    key = 'resources'
+    directorio = setting_routes(key)[0]
     rutas = []
 
     for nombre_directorio, dirs, ficheros in os.walk(directorio):

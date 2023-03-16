@@ -1,4 +1,8 @@
 {
+    "resources": [
+        "src/inputs/",
+        "src/outputs/"
+    ],
     "exec": [
         [
             "Efectuar cambio de extension de TCPLAN",

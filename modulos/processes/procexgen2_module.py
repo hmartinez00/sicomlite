@@ -7,7 +7,7 @@ from V2Gen.procexmodule2 import *
 from modulos.builders.trackingplan_module import trackingplan
 
 
-def procexgen2():
+def procexgen2(container):
 
     # ---------------------------------------------------------------------
     # Seleccionando el CPLAN
@@ -42,7 +42,7 @@ def procexgen2():
     # Creando árbol de directorios
     # ---------------------------------------------------------------------
     print('{}% Creando arbol de directorios.'.format(int(4/8*100)))
-    directories_generator(directories_builder(CPLAN_extract(archivo)))
+    directories_generator(directories_builder(CPLAN_extract(archivo), container))
 
     # ---------------------------------------------------------------------
 
@@ -78,4 +78,4 @@ def procexgen2():
     # Organizando los archivos
     # ---------------------------------------------------------------------
     print('{}% Organizando archivos.'.format(int(8/8*100)))
-    files_organizer(CPLAN_extract(archivo), RecPass)
+    files_organizer(CPLAN_extract(archivo), RecPass, container)

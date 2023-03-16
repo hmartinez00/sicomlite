@@ -3,15 +3,15 @@
         [
             "Efectuar cambio de extension de TCPLAN",
             "Opciones de verificacion",
-            "Generacion de BatchID Plan",
             "Generacion paso a paso",
+            "Generacion de BatchID Plan",
             "Hacer commit automatico"
         ],
         [
             "scripts/tcplanprepare.py",
-            "scripts/checkoptions.py",
+            "scripts/submenues/checkoptions.py",
+            "scripts/submenues/gensteps.py",
             "scripts/generar_batchid.py",
-            "scripts/gensteps.py",
             "modulos/Package_update/git_update.py"
         ]
     ],

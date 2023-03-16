@@ -1,10 +1,9 @@
 import os
-from modulos.cplanxgen2_module import cplanxgen2
-from modulos.procexgen2_module import procexgen2
-from modulos.IDUpdate_module import ID_Update
-from modulos.cplanimport_module import cplanimport
+from modulos.processes.cplanxgen2_module import cplanxgen2
+from modulos.processes.procexgen2_module import procexgen2
+from modulos.processes.IDUpdate_module import ID_Update
+from modulos.builders.cplanimport_module import cplanimport
 from ManageDB.sqlite_on_db import sqlite_Insertar_registro_masivo
-
 
 
 S_base_datos = 'vrss_operation_and_managment_subsystem'

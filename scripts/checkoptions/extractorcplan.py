@@ -1,4 +1,4 @@
-from modulos.extractorcplan_module import extractorcplan
+from modulos.builders.extractorcplan_module import extractorcplan
 
 
 print(extractorcplan())

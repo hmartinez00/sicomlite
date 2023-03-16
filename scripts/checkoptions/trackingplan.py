@@ -1,5 +1,4 @@
-import pandas as pd
-from modulos.trackingplan_module import trackingplan
+from modulos.builders.trackingplan_module import trackingplan
 
 
 df = trackingplan()

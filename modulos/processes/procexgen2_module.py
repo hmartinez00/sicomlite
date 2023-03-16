@@ -4,7 +4,7 @@
 import os
 from datetime import datetime
 from V2Gen.procexmodule2 import *
-from modulos.trackingplan_module import trackingplan
+from modulos.builders.trackingplan_module import trackingplan
 
 
 def procexgen2():

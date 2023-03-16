@@ -2,7 +2,7 @@
 # Importamos las librerías.
 # ---------------------------------------------------------------------
 import pandas as pd
-from modulos.extractorcplan_module import extractorcplan
+from modulos.builders.extractorcplan_module import extractorcplan
 
 
 def cplanimport():

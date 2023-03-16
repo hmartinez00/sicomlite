@@ -1,3 +1,3 @@
-from modulos.procexgen2_module import procexgen2
+from modulos.processes.procexgen2_module import procexgen2
 
 procexgen2()

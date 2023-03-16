@@ -1,4 +1,4 @@
-from modulos.IDUpdate_module import ID_Update
+from modulos.processes.IDUpdate_module import ID_Update
 
 
 dia_de_plan = input('{}% Introducir BatchID: '.format(int(0/8*100)))

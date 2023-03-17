@@ -7,7 +7,9 @@ from ManageDB.sqlite_on_db import sqlite_Insertar_registro_masivo
 from General_Utilities.control_rutas import setting_routes
 
 
-S_base_datos = 'vrss_operation_and_managment_subsystem'
+key = 'databases'
+directorio = setting_routes(key)[0]
+S_base_datos = directorio + 'vrss_operation_and_managment_subsystem'
 S_tabla = '`control_misiones_id_control_process`'
 
 print('{}% Extrayendo la tabla de misiones.'.format(int(0/8*100)))
@@ -30,7 +32,7 @@ pregunta = input('Desea actualizar la tabla de procesos? (S/N): ')
 
 if pregunta == 's' or pregunta == 'S':
     try:
-        os.chdir('../../..')
+        # os.chdir(directorio)
         # print(os.getcwd())
         sqlite_Insertar_registro_masivo(S_base_datos, S_tabla, df, 0, 4)
     except:

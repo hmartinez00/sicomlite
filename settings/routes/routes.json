@@ -1,7 +1,6 @@
 {
     "resources": [
-        "src/inputs/",
-        "src/outputs/"
+        "C:/Users/Hector/Documents/0 - A Control de Procesos/"
     ],
     "exec": [
         [
@@ -26,13 +25,15 @@
                 "TrackingPlan",
                 "Accesos",
                 "Misiones",
-                "Verificar tabla de procesos"
+                "Verificar tabla de procesos",
+                "Verificar enrutamiento"
             ],
             "acciones": [
                 "scripts/checkoptions/trackingplan.py",
                 "scripts/checkoptions/extractorcplan.py",
                 "scripts/checkoptions/cplanimport.py",
-                "scripts/checkoptions/checkidupdate.py"
+                "scripts/checkoptions/checkidupdate.py",
+                "scripts/checkoptions/routing.py"
             ]
         },
         "gensteps":

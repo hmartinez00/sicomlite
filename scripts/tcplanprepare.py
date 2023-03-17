@@ -15,14 +15,20 @@ import os
 import shutil
 from datetime import datetime
 from V2Gen.procexmodule2 import TCPLAN_extract
+from modulos.processes.routing_module import routing
 
 
 # ---------------------------------------------------------------------
+
+key = 'missions'
+directorio = routing(key)[1]
+print(directorio)
 
 archivo_viejo = input('Introduzca ruta del archivo: ')
 print('Archivo: ' + archivo_viejo)
 
 directorio = os.path.dirname(archivo_viejo)
+print(directorio)
 print('Directorio del archivo: ' + directorio)
 
 satellite = TCPLAN_extract(archivo_viejo)['SCNAME'][0]

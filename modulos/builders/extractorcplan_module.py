@@ -16,13 +16,14 @@ def extractorcplan():
     '''
 
     # directorio = 'src'
-    key = 'resources'
-    directorio = setting_routes(key)[0]
+    # directorio = setting_routes(key)[0]
+    key = 'missions'
+    directorio = routing(key)[1]
     rutas = []
 
     for nombre_directorio, dirs, ficheros in os.walk(directorio):
         for nombre_fichero in ficheros:
-            if '.xlsx' in nombre_fichero:
+            if 'final.xlsx' in nombre_fichero:
                 ruta = nombre_directorio + '\\' + nombre_fichero
                 rutas.append(ruta.replace('\\', '/'))
 

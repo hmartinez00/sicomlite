@@ -1,6 +1,7 @@
 from modulos.processes.routing_module import routing
 
 
-clave = 'database'
-tree = routing(clave)
-print(tree[1])
+key = 'database'
+mode = False
+tree = routing(mode)[key]
+print(tree)

@@ -1,6 +1,7 @@
 from modulos.builders.trackingplan_module import trackingplan
 
 
-df = trackingplan()
+mode = False
+df = trackingplan(mode)
 
 print(df)

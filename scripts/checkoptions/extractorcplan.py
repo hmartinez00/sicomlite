@@ -1,4 +1,5 @@
 from modulos.builders.extractorcplan_module import extractorcplan
 
 
-print(extractorcplan())
+mode = False
+print(extractorcplan(mode))

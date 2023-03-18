@@ -2,13 +2,15 @@ import math
 from datetime import datetime
 from ManageDB.sqlite_on_db import selectall
 from V2Gen.cplanmodule2 import BatchID_missions_table, values_zero, XML_CPLAN2_generator
+from modulos.processes.routing_module import routing
 
 
-def cplanxgen2(misiones_0, Date_Code_BatchID):
+def cplanxgen2(misiones_0, Date_Code_BatchID, mode):
     # ---------------------------------------------------------------------
     # Definiendo la Base de datos
     # ---------------------------------------------------------------------
-    base_datos = 'vrss_operation_and_managment_subsystem'
+    key = 'database'
+    base_datos = routing(mode)[key] + 'vrss_operation_and_managment_subsystem'
 
     # ---------------------------------------------------------------------
     # Consulta a la tabla de Control de Procesos.

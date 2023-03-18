@@ -1,11 +1,10 @@
 import os
 import pandas as pd
 from datetime import datetime
-from General_Utilities.control_rutas import setting_routes
 from modulos.processes.routing_module import routing
 
 
-def extractorcplan():
+def extractorcplan(mode):
     '''
     ABAE-SAT-UT-SGO
     Desarrollado por: Héctor Martínez (Jefe(E) Telecomunicaciones)
@@ -15,17 +14,16 @@ def extractorcplan():
       a *.csv.
     '''
 
-    # directorio = 'src'
-    # directorio = setting_routes(key)[0]
     key = 'missions'
-    directorio = routing(key)[1]
+    # mode = True
+    directorio = routing(mode)[key]
     rutas = []
 
     for nombre_directorio, dirs, ficheros in os.walk(directorio):
         for nombre_fichero in ficheros:
             if 'final.xlsx' in nombre_fichero:
                 ruta = nombre_directorio + '\\' + nombre_fichero
-                rutas.append(ruta.replace('\\', '/'))
+                rutas.append(ruta.replace('\\', ''))
 
 
     # archivo_0 = input('Introduzca ruta del archivo: ')

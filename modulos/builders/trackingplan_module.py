@@ -4,13 +4,13 @@
 import os
 import pandas as pd
 from V2Gen.procexmodule2 import TCPLAN_extract
-from General_Utilities.control_rutas import setting_routes
 from modulos.processes.routing_module import routing
+from General_Utilities.control_rutas import setting_routes
 
 
 # ---------------------------------------------------------------------
 
-def trackingplan():
+def trackingplan(mode):
 
     '''
     ABAE-SAT-UT-SGO
@@ -24,7 +24,7 @@ def trackingplan():
     # Recabando info de XMLs.
     # ---------------------------------------------------------------------
     key = 'missions'
-    directorio = routing(key)[1]
+    directorio = routing(mode)[key]
     rutas = []
 
     for nombre_directorio, dirs, ficheros in os.walk(directorio):

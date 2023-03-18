@@ -1,17 +1,16 @@
 {
     "resources": [
+        "C:/Users/admin/Documents/0 - A Control de Procesos/",
         "C:/Users/Hector/Documents/0 - A Control de Procesos/"
     ],
     "exec": [
         [
-            "Efectuar cambio de extension de TCPLAN",
             "Opciones de verificacion",
             "Generacion paso a paso",
             "Generacion de BatchID Plan",
             "Hacer commit automatico"
         ],
         [
-            "scripts/tcplanprepare.py",
             "scripts/submenues/checkoptions.py",
             "scripts/submenues/gensteps.py",
             "scripts/generar_batchid.py",
@@ -39,11 +38,13 @@
         "gensteps":
         {
             "opciones": [
+                "Efectuar cambio de extension de TCPLAN",
                 "Generar CPLAN",
                 "Generar Plan files",
                 "Generar tabla de procesos"
             ],
             "acciones": [
+                "scripts/gensteps/tcplanprepare_exec.py",
                 "scripts/gensteps/cplanxgen2_exec.py",
                 "scripts/gensteps/procexgen2_exec.py",
                 "scripts/gensteps/idupdate_exec.py"

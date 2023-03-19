@@ -1,4 +1,4 @@
-from modulos.exec.exec_idupdate import actualiza_DB
+from modulos.exec.exec_module import generar_TCPLAN, generar_CPLAN, generar_archivos, actualiza_DB
 
 
 actualiza_DB()

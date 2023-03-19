@@ -1,4 +1,4 @@
-from modulos.exec.exec_cplanxgen2 import generar_CPLAN
+from modulos.exec.exec_module import generar_TCPLAN, generar_CPLAN, generar_archivos, actualiza_DB
 
 
 generar_CPLAN()

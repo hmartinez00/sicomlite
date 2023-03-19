@@ -7,7 +7,7 @@ from V2Gen.procexmodule2 import *
 from modulos.builders.trackingplan_module import trackingplan
 
 
-def procexgen2(container, mode):
+def procexgen2(container, location):
 
     # ---------------------------------------------------------------------
     # Seleccionando el CPLAN
@@ -30,7 +30,7 @@ def procexgen2(container, mode):
     # ---------------------------------------------------------------------
     # Extrayendo la información del plan de traqueo
     # ---------------------------------------------------------------------
-    RecPass = trackingplan(mode)
+    RecPass = trackingplan(location)
     RecPass['Diff'] = fecha_hora - RecPass['CaptureStartTime']
     CaptureTime_dict = near_orbits(CPLAN_extract(archivo), RecPass)
 

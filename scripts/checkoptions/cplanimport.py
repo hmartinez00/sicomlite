@@ -1,5 +1,6 @@
 from modulos.builders.cplanimport_module import cplanimport
 
 
-mode = False
-print(cplanimport(mode))
+mode = True
+misiones_0 = cplanimport(mode)
+print(misiones_0)

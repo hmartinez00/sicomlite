@@ -5,7 +5,6 @@ import os
 import pandas as pd
 from V2Gen.procexmodule2 import TCPLAN_extract
 from modulos.processes.routing_module import routing
-from General_Utilities.control_rutas import setting_routes
 
 
 # ---------------------------------------------------------------------
@@ -23,10 +22,13 @@ def trackingplan(mode):
     # ---------------------------------------------------------------------
     # Recabando info de XMLs.
     # ---------------------------------------------------------------------
-    key = 'missions'
-    directorio = routing(mode)[key]
-    rutas = []
+    if mode == True or mode == False:
+        key = 'missions'
+        directorio = routing(mode)[key]
+    else:
+        directorio = mode
 
+    rutas = []
     for nombre_directorio, dirs, ficheros in os.walk(directorio):
         for nombre_fichero in ficheros:
             if '.xml' in nombre_fichero:

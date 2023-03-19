@@ -5,11 +5,12 @@ from V2Gen.cplanmodule2 import BatchID_missions_table, values_zero, XML_CPLAN2_g
 from modulos.processes.routing_module import routing
 
 
-def cplanxgen2(misiones_0, Date_Code_BatchID, mode):
+def cplanxgen2(misiones_0, Date_Code_BatchID):
     # ---------------------------------------------------------------------
     # Definiendo la Base de datos
     # ---------------------------------------------------------------------
     key = 'database'
+    mode = False
     base_datos = routing(mode)[key] + 'vrss_operation_and_managment_subsystem'
 
     # ---------------------------------------------------------------------

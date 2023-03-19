@@ -2,17 +2,19 @@
 
 Aplicacion para gestionar procesos de generacion de archivos VRSS-2.
 
-## Descripcion
+## Breve Descripcion
 
-Es una herramiento en linea de comando en la version actual. Consiste en un proyecto simplificado, proveniente del proyecto padre bajo el nombre SUGICOM, en el que se ha separado y rehubicado buena parte del codigo en aras de la eficiencia.
+Es una herramienta para la generacion de archivos de planes satelitales en el marco del proyecto VRSS, que satisfacen los estandares programados para los subsistemas de SCC, SS,TDRS. La version actual se ejecuta en linea de comando.
+
+Consiste en un proyecto simplificado, proveniente del proyecto padre bajo el nombre _SUGICOM_, en el que se ha separado y rehubicado buena parte del codigo en aras de la eficiencia, independizando el codigo de la informacion sensible generada por los algoritmos.
 
 ### El codigo 
 
 Se encuentra distribuido en tres secciones principales:
 
-* modulos generales: Los cuales levantan las estructuras XML.
-* modulos especificos: Los cuales controlan la generacion de los archivos.
-* scripts: Los cuales permiten ejecutar la generacion, sirviendose de la informacion almacenada en los modulos especificos.
+* **modulos generales**: Los cuales levantan las estructuras XML.
+* **modulos especificos**: Los cuales controlan la generacion de los archivos.
+* **scripts**: Los cuales permiten ejecutar la generacion, sirviendose de la informacion almacenada en los modulos especificos.
 
 ### La ejecucion
 

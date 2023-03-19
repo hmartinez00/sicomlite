@@ -1,5 +1,4 @@
-from modulos.processes.tcplanprepare_module import tcplanprepare
+from modulos.exec.exec_tcplanprepare import generar_TCPLAN
 
 
-mode = False
-tcplanprepare(mode)
+generar_TCPLAN()

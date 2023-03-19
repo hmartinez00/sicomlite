@@ -1,8 +1,4 @@
-from modulos.processes.procexgen2_module import procexgen2
-from modulos.processes.routing_module import routing
+from modulos.exec.exec_procexgen2 import generar_archivos
 
 
-key = 'plans'
-mode = False
-container = routing(mode)[key]
-procexgen2(container, mode)
+generar_archivos()

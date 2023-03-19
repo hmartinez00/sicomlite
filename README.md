@@ -18,7 +18,7 @@ Se encuentra distribuido en tres secciones principales:
 
 ### La ejecucion
 
-A su vez, todas las ejecuciones son controladas mediante un sistema de control de rutas a traves de un archivo json, donde a su vez se encuentra registradas las opciones de los menues y submenues, asi como la ruta de recursos de donde se extrae y a donde se envia la informacion.
+A su vez, todas las ejecuciones son controladas mediante un sistema de control de rutas a traves de un archivo json, donde por su parte, se encuentra registradas las opciones de los menues y submenues, asi como la ruta de recursos de donde se extrae y a donde se envia la informacion.
 
 ### La Base de datos
 

@@ -7,7 +7,7 @@ from V2Gen.procexmodule2 import *
 from modulos.builders.trackingplan_module import trackingplan
 
 
-def procexgen2(container):
+def procexgen2(container, mode):
 
     # ---------------------------------------------------------------------
     # Seleccionando el CPLAN
@@ -30,21 +30,15 @@ def procexgen2(container):
     # ---------------------------------------------------------------------
     # Extrayendo la información del plan de traqueo
     # ---------------------------------------------------------------------
-    RecPass = trackingplan()
+    RecPass = trackingplan(mode)
     RecPass['Diff'] = fecha_hora - RecPass['CaptureStartTime']
     CaptureTime_dict = near_orbits(CPLAN_extract(archivo), RecPass)
-    # base_datos = 'vrss_operation_and_managment_subsystem'
-    # tabla = '`control_misiones_tcplan_info`'
-    # RecPassB = mysql_extract_table_df(base_datos, tabla)
-
 
     # ---------------------------------------------------------------------
     # Creando árbol de directorios
     # ---------------------------------------------------------------------
     print('{}% Creando arbol de directorios.'.format(int(4/8*100)))
     directories_generator(directories_builder(CPLAN_extract(archivo), container))
-
-    # ---------------------------------------------------------------------
 
     # ---------------------------------------------------------------------
     # Creando archivos de parámetros de cámara
@@ -55,14 +49,10 @@ def procexgen2(container):
         XML_SETPARA_Generator(SETPARA_dict, ParameterFileCount)
         
     # ---------------------------------------------------------------------
-
-    # ---------------------------------------------------------------------
     # Creando certificado de envío
     # ---------------------------------------------------------------------
     print('{}% Creando certificado de envio.'.format(int(6/8*100)))
     XML_OK_generator(OK_builder(CPLAN_extract(archivo)))
-
-    # ---------------------------------------------------------------------
 
     # ---------------------------------------------------------------------
     # Creando Tareas de recepción
@@ -72,8 +62,6 @@ def procexgen2(container):
     for ParameterFileCount in range(len(RECEIVETASK_dict['MessageID'])):
         XML_RECEIVETASK_Generator(RECEIVETASK_dict, ParameterFileCount)
         
-    # ---------------------------------------------------------------------
-
     # ---------------------------------------------------------------------
     # Organizando los archivos
     # ---------------------------------------------------------------------

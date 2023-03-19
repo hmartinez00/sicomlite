@@ -1,7 +1,8 @@
 from modulos.processes.procexgen2_module import procexgen2
-from General_Utilities.control_rutas import setting_routes
+from modulos.processes.routing_module import routing
 
 
-key = 'resources'
-container = setting_routes(key)[1]
-procexgen2(container)
+key = 'plans'
+mode = False
+container = routing(mode)[key]
+procexgen2(container, mode)

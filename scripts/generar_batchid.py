@@ -13,17 +13,19 @@ S_base_datos = directorio + 'vrss_operation_and_managment_subsystem'
 S_tabla = '`control_misiones_id_control_process`'
 
 print('{}% Extrayendo la tabla de misiones.'.format(int(0/8*100)))
-misiones_0 = cplanimport()
+mode = False
+misiones_0 = cplanimport(mode)
 
 dia_de_plan = input('{}% Introducir BatchID: '.format(int(1/8*100)))
 Date_Code_BatchID = int(dia_de_plan)
 
 # Aqui generamos el CPLAN
-cplanxgen2(misiones_0, Date_Code_BatchID)
+cplanxgen2(misiones_0, Date_Code_BatchID, mode)
 # Aqui generamos el resto de los archivos y construimos el arbol de directorios
-key = 'resources'
-container = setting_routes(key)[1]
-procexgen2(container)
+key = 'plans'
+mode = False
+container = routing(mode)[key]
+procexgen2(container, mode)
 # Aqui se construye el dataframe de procesos
 df = ID_Update(Date_Code_BatchID, container)
 print(df)
@@ -32,8 +34,6 @@ pregunta = input('Desea actualizar la tabla de procesos? (S/N): ')
 
 if pregunta == 's' or pregunta == 'S':
     try:
-        # os.chdir(directorio)
-        # print(os.getcwd())
         sqlite_Insertar_registro_masivo(S_base_datos, S_tabla, df, 0, 4)
     except:
         print('No se actualizo la tabla!')

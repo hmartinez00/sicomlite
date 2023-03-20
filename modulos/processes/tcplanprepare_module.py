@@ -11,15 +11,13 @@ from modulos.processes.routing_module import routing
 def tcplanprepare(mode):
 
     '''
-    # ---------------------------------------------------------------------
-    # ABAE-SAT-UT-SGO
-    # Desarrollado por: Héctor Martínez (Jefe(E) Telecomunicaciones)
-    # Creación: 2022-10-12
-    # Actualización: 2022-10-12
-    #
-    #   Script para preparacion del TCPLAN.
-    #
-    # ---------------------------------------------------------------------
+    ABAE-SAT-UT-SGO
+    Desarrollado por: Héctor Martínez (Jefe(E) Telecomunicaciones)
+    Creación: 2022-10-12
+    Actualización: 2022-10-12
+    
+    tcplanprepare: Script para preparacion del TCPLAN.
+
     '''
 
     key = 'missions'

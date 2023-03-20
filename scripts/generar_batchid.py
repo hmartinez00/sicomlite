@@ -10,7 +10,9 @@ Date_Code_BatchID = generar_CPLAN(mode)
 print(Date_Code_BatchID)
 
 mode = False
-generar_archivos(mode)
+container = generar_archivos(mode)
 
-mode = False
-actualiza_DB(mode)
+actualiza_DB(
+    container,
+    Date_Code_BatchID
+)

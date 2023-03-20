@@ -46,7 +46,12 @@ def generar_archivos(mode_0):
 
     procexgen2(container, location)
 
-def actualiza_DB(mode_0):
+    return container
+
+def actualiza_DB(
+        container,
+        Date_Code_BatchID
+    ):
     '''
     Funcion de gestion la actualizacion de la tabla de control de procesos.
     '''
@@ -58,12 +63,14 @@ def actualiza_DB(mode_0):
     S_tabla = '`control_misiones_id_control_process`'
 
 
-    key = 'plans'
-    container = routing(mode_0)[key]
+    if container == None and Date_Code_BatchID == None:
+        key = 'plans'
+        mode_0 = True
+        container = routing(mode_0)[key]
 
-    dia_de_plan = input('{}% Introducir BatchID: '.format(int(0/8*100)))
-    Date_Code_BatchID = int(dia_de_plan)
-
+        dia_de_plan = input('{}% Introducir BatchID: '.format(int(0/8*100)))
+        Date_Code_BatchID = int(dia_de_plan)
+    
     df = ID_Update(Date_Code_BatchID, container)
     print(df)
 

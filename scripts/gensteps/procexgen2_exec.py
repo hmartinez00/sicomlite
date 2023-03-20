@@ -2,4 +2,6 @@ from modulos.exec.exec_module import generar_TCPLAN, generar_CPLAN, generar_arch
 
 
 mode_0 = True
-generar_archivos(mode_0)
+container = generar_archivos(mode_0)
+
+print(container)

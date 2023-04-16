@@ -3,8 +3,8 @@ from ManageDB.sqlite_on_db import *
 from General_Utilities.fecha import format_FechaID
 from General_Utilities.option_list import option_list
 from General_Utilities.control_rutas import setting_routes
-from MessagesKit.str_msg_format import buildmessage as bm
-from modulos.msgo_creator_module import msgo_sender, general_msgo_sender
+from modulos.msgservice.str_msg_format import buildmessage as bm
+from modulos.msgservice.msgo_creator_module import msgo_sender, general_msgo_sender
 
 database = r"C:\Users\admin\Documents\0 - A Control de Procesos\data\vrss_operation_and_managment_subsystem.db"
 Fecha = input('Introduzca la fecha: ')
@@ -13,6 +13,8 @@ Fecha = format_FechaID(Fecha)
 key = 'tables'
 tables = setting_routes(key)
 option = option_list(tables)
+
+print(option)
 
 # if option != 'settings/tables/plan_biblia_52.json':
 #     msgo_sender(database, option, Fecha)

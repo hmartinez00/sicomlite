@@ -7,25 +7,23 @@
         "settings/sender/settings.json"
     ],
     "tables": [
-        "settings/tables/aguas_vivas_comentarios.json",
-        "settings/tables/aguas_vivas_pasajes.json",
-        "settings/tables/preguntas_la_buena_semilla.json",
-        "settings/tables/preguntas_lecturas.json",
-        "settings/tables/proverbios.json",
-        "settings/tables/plan_biblia_52.json"
+        "control_misiones_id_control_process",
+        "guardias"
     ],
     "exec": [
         [
             "Opciones de verificacion",
             "Generacion paso a paso",
             "Generacion de BatchID Plan",
-            "Hacer commit automatico"
+            "Hacer commit automatico",
+            "Publicar equipo de guardia"
         ],
         [
             "scripts/submenues/checkoptions.py",
             "scripts/submenues/gensteps.py",
             "scripts/generar_batchid.py",
-            "modulos/Package_update/git_update.py"
+            "modulos/Package_update/git_update.py",
+            "scripts/msgo_creator.py"
         ]
     ],
     "sub_exec": {

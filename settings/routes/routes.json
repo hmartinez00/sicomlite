@@ -3,6 +3,17 @@
         "C:/Users/Hector/Documents/0 - A Control de Procesos/",
         "C:/Users/admin/Documents/0 - A Control de Procesos/"
     ],
+    "sender": [
+        "settings/sender/settings.json"
+    ],
+    "tables": [
+        "settings/tables/aguas_vivas_comentarios.json",
+        "settings/tables/aguas_vivas_pasajes.json",
+        "settings/tables/preguntas_la_buena_semilla.json",
+        "settings/tables/preguntas_lecturas.json",
+        "settings/tables/proverbios.json",
+        "settings/tables/plan_biblia_52.json"
+    ],
     "exec": [
         [
             "Opciones de verificacion",
